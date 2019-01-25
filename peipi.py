@@ -1,11 +1,7 @@
 '''猪头佩琪的画法'''
-import time
 import turtle as t
 
 class peipi():
-    def __init__(self):
-        #画笔的初始化
-        print('peipi pig')
 
     def nose(self,x,y): #鼻子
         t.penup()
