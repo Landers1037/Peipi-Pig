@@ -1,7 +1,11 @@
 '''猪头佩琪的画法'''
+import time
 import turtle as t
 
 class peipi():
+    # def __init__(self):
+    #     #画笔的初始化
+    #     print('peipi pig')
 
     def nose(self,x,y): #鼻子
         t.penup()
@@ -43,8 +47,6 @@ class peipi():
         t.circle(5)
         t.color(160, 82, 45)
         t.end_fill()
-
-
 
 
     def eyes(self,x,y): #眼睛
@@ -259,19 +261,56 @@ class peipi():
         t.circle(10, 330)
         t.circle(70, 30)
 
+    def toyturn(self):
+        t.begin_fill()
+        t.forward(45)
+        t.left(45)
+        t.forward(20)
+        t.left(135)
+        t.forward(45)
+        t.left(45)
+        t.forward(20)
+        t.end_fill()
+
+    def toy(self,x,y):
+        t.pensize(2)
+        t.color('red')
+        t.penup()
+        t.goto(x,y)
+        t.pendown()
+        t.seth(0)
+        self.toyturn()
+        #
+        t.color('blue')
+        t.seth(90)
+        self.toyturn()
+        #
+        t.color('yellow')
+        t.seth(180)
+        self.toyturn()
+        #
+        t.color('green')
+        t.seth(270)
+        self.toyturn()
+        #
+        t.color('black')
+        t.seth(270)
+        t.forward(80)
+
+
+
     def setting(self): #画笔的设置
         t.pensize(4)
         t.hideturtle()  # 使乌龟无形（隐藏）
         t.colormode(255)  # 将其设置为1.0或255.随后 颜色三元组的r，g，b值必须在0 .. cmode范围内
         t.color((255, 155, 192), "pink")
-        t.setup(840, 500)
-        t.speed(20)
-
+        t.setup(1200, 500)
+    
     def write(self,x,y):
         t.pencolor('red')
         t.penup()
         t.goto(x,y)
-        t.write('新年快乐',font=('宋体',40,'normal'))
+        t.write('老猪祝各位新年快乐',font=('微软雅黑',30,'normal'))
 
 
     def main(self):
@@ -285,8 +324,9 @@ class peipi():
         self.body(-32, -8)  # 身体
         self.hands(-56, -45)  # 手
         self.feet(2, -177)  # 脚
-        self.write(-350,-20)
+        self.toy(190,0)
         self.tail(148, -155)  # 尾巴
+        self.write(-450, -20)
         t.mainloop()
 
 if __name__=='__main__':
